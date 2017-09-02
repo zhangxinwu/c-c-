@@ -220,6 +220,9 @@ bool dfs(short stp, short k, G *g)
 //主要算法 IDA* 
 int idaStar(G *g)
 {
+    //更改Pre_value可以控制步数， 最佳平均步数21.6 
+    //将Pre_value更改到21以上可将时间优化
+    //但步数也会增加，且稳定在接近Pre_value的范围
     Pre_value = 0;
 
     while (!dfs(0, -1, g))
